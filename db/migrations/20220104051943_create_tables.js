@@ -13,7 +13,7 @@ exports.up = function (knex) {
 			table.timestamp('updated_at').defaultTo(knex.fn.now());
 		})
 		.createTable('inventory', (table) => {
-			table.increments('id').primary();
+			table.string('id').primary();
 			table
 				.string('warehouse_id')
 				.notNullable()

@@ -1,5 +1,4 @@
-const { warehousesData, inventoriesData } = require('data/data');
-const { join } = require('path/posix');
+const { warehousesData, inventoriesData } = require('../../data/data');
 
 exports.seed = function (knex) {
 	// Deletes ALL existing entries

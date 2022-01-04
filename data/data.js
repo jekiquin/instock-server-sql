@@ -1,5 +1,5 @@
-const inventories = require('data/inventories');
-const warehouses = require('data/warehouses');
+const inventories = require('./inventories');
+const warehouses = require('./warehouses');
 
 const warehousesData = warehouses.map((warehouse) => ({
 	id: warehouse.id,
@@ -19,7 +19,7 @@ const inventoriesData = inventories.map((inventory) => ({
 	name: inventory.itemName,
 	description: inventory.description,
 	category: inventory.category,
-	quantity: inventory.category,
+	quantity: inventory.quantity,
 	status: inventory.status
 }));
 
