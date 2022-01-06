@@ -6,6 +6,7 @@ const logger = require('morgan');
 const cors = require('cors');
 
 const warehouseRouter = require('./routes/warehouses');
+const inventoriesRouter = require('./routes/inventories');
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/warehouses', warehouseRouter);
+app.use('/inventories', inventoriesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

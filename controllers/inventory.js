@@ -8,6 +8,11 @@ const inventoryWithWarehouseName = () => {
 		.innerJoin('warehouse', 'inventory.warehouse_id', 'warehouse.id');
 };
 
+const getAllInventories = async (_req, res) => {
+	const inventories = await inventoryWithWarehouseName();
+	res.status(200).json(inventories);
+};
+
 const verifyInventoryId = async (req, _res, next) => {
 	const { inventoryId } = req.params;
 	try {
@@ -32,6 +37,7 @@ const getInventoryById = async (req, res) => {
 };
 
 module.exports = {
+	getAllInventories,
 	verifyInventoryId,
 	getInventoryById
 };
