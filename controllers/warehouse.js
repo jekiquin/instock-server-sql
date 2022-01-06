@@ -11,12 +11,11 @@ const verifyWarehouseId = async (req, _res, next) => {
 	try {
 		const warehouse = await knex('warehouse').select().where({ id: warehouseId });
 		if (!warehouse.length) {
-			return next(createError(404, `${warehouseId} not found!`));
+			return next(createError(404, `Warehouse ${warehouseId} not found!`));
 		}
 		req.warehouse = warehouse;
 		next();
 	} catch (error) {
-		error.status = 400;
 		next(error);
 	}
 };
